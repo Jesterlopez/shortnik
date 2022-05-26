@@ -3,6 +3,7 @@ import styles from '../styles/Form.module.css'
 import { checkFormattUrl } from "../utils/checkFormattUrl"
 import { IconCopy, Loader } from "../utils/icons"
 
+const HOST = process.env.HOST_NAME_PROD || 'http://localhost:3000/'
 
 export const FormShortLink = () => {
   const inputRef = useRef(null)
@@ -29,7 +30,7 @@ export const FormShortLink = () => {
         })
         .then(res => res.json())
         .then(data => {
-          setShortURL(`${process.env.HOST_URL_DEV}${data.shortUrl}`)
+          setShortURL(`${HOST}${data.shortUrl}`)
           inputRef.current.value = ''
           setLoading(false)
         })
