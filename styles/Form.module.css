@@ -1,0 +1,122 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input {
+  padding: 15px 10px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  font-weight: 600;
+  width: 85%;
+
+}
+
+.input:focus {
+  outline: none;
+}
+
+.button {
+  border-radius: 0 5px 5px 0;
+  border: none;
+  padding: 15px 10px;
+  background: #3B349C;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s ease color, .3s ease background-color;
+  width: 15%;
+}
+
+.button:hover {
+  background-color: #3b349c90;
+}
+
+.shortLink {
+  color: #3B349C;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.shortLink a {
+  color: #3B349C;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: underline;
+  text-decoration-color: #3B349C;
+}
+
+.copy {
+  height: 35px;
+  padding: 5px;
+  background-color: #3B349C;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.copy svg {
+  width: 25px;
+  height: 25px;
+}
+
+.messageError {
+  margin-top: 10px;
+  color: #ff0000;
+  font-weight: 300;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000090;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  .input {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  80% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
