@@ -1,9 +1,7 @@
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState } from "react"
 import styles from '../styles/Form.module.css'
 import { checkFormattUrl } from "../utils/checkFormattUrl"
 import { IconCopy, Loader } from "../utils/icons"
-
-const HOST = process.env.HOST_NAME_PROD || 'http://localhost:3000/'
 
 export const FormShortLink = () => {
   const inputRef = useRef(null)
@@ -11,7 +9,6 @@ export const FormShortLink = () => {
   const [error, setError] = useState(false)
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
-
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -30,7 +27,7 @@ export const FormShortLink = () => {
         })
         .then(res => res.json())
         .then(data => {
-          setShortURL(`${HOST}${data.shortUrl}`)
+          setShortURL(`${process.env.HOST_NAME_DEV}${data.shortUrl}`)
           inputRef.current.value = ''
           setLoading(false)
         })
