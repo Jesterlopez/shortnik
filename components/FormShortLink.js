@@ -30,11 +30,7 @@ export const FormShortLink = () => {
         })
         .then(res => res.json())
         .then(data => {
-<<<<<<< HEAD
           setShortURL(`${HOST}${data.shortUrl}`)
-=======
-          setShortURL(`${process.env.HOST_NAME_DEV}${data.shortUrl}`)
->>>>>>> 377568b7f3bc918387c9b6b00da80447355b9838
           inputRef.current.value = ''
           setLoading(false)
         })
